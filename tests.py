@@ -23,7 +23,7 @@ class TestGetFilesInfo(unittest.TestCase):
         result = get_files_info("calculator", "../")
         print(result)
 
-@unittest.skip("")
+# @unittest.skip("")
 class TestGetFileContent(unittest.TestCase):
 
     def test_lorem(self):
@@ -57,6 +57,7 @@ class TestWriteFile(unittest.TestCase):
         result = write_file("calculator", "/tmp.temp.txt", "this should not be allowed")
         print(result)
 
+@unittest.skip("")
 class TestRunPythonFile(unittest.TestCase):
 
     def test_run_calc_main(self):

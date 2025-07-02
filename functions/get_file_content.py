@@ -1,6 +1,7 @@
 import os
 
-MAX_SIZE: int = 10_000
+import config
+
 
 def get_file_content(working_directory: str, file_path: str) -> str:
     full_path = os.path.abspath(os.path.join(working_directory, file_path))
@@ -10,9 +11,9 @@ def get_file_content(working_directory: str, file_path: str) -> str:
         return f'Error: File not found or is not a regular file: "{file_path}"'
     try:
         with open(full_path, "r") as f:
-            content: str = f.read(MAX_SIZE)
+            content: str = f.read(config.MAX_CHARACTER)
     except Exception as e:
         return f"Error unable to read file {file_path} content: {e}"
-    if len(content) == MAX_SIZE:
+    if len(content) == config.MAX_CHARACTER:
         content += f'[...File "{file_path}" truncated at 10000 characters]'
     return content
