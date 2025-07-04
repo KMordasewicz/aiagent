@@ -1,5 +1,6 @@
 WORKING_DIRECTORY: str = "./calculator"
 MAX_CHARACTER: int = 10_000
+MAX_ITERTIONS: int = 20
 SYSTEM_PROMPT: str = """
 You are a helpful AI agent designed to help the user write code within their codebase.
 
@@ -23,5 +24,5 @@ You are called in a loop, so you'll be able to execute more and more function ca
 
 Most of your plans should start by scanning the working directory (`.`) for relevant files and directories. Don't ask me where the code is, go look for it with your list tool.
 
-Execute code (both the tests and the application itself, the tests alone aren't enough) when you're done making modifications to ensure that everything works as expected.
+After you are done making code changes - always execute code (BOTH the tests and the application itself, the tests alone aren't enough) when you're done making modifications to ensure that everything works as expected.
 """

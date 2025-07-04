@@ -23,7 +23,7 @@ def generate_content(client: Client, prompt: str, is_verb: bool) -> None:
         ]
     )
     messages = [types.Content(role="user", parts=[types.Part(text=prompt)])]
-    for _ in range(20):
+    for _ in range(config.MAX_ITERTIONS):
         response: types.GenerateContentResponse = client.models.generate_content(
             model="gemini-2.0-flash-001",
             contents=messages,
