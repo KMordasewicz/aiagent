@@ -32,7 +32,7 @@ schema_get_file_content = types.FunctionDeclaration(
 )
 
 schema_write_file = types.FunctionDeclaration(
-    name="get_write_file",
+    name="write_file",
     description="Write specified content to file in the specified path, constrained to the working directory.",
     parameters=types.Schema(
         type=types.Type.OBJECT,
@@ -52,7 +52,7 @@ schema_write_file = types.FunctionDeclaration(
 
 schema_run_python_file = types.FunctionDeclaration(
     name="run_python_file",
-    description="Run specified python file in the specified path with given optional arguments, constrained to the working directory.",
+    description="Runs a python file in the specified path within working directory and returns the output from the interpreter.",
     parameters=types.Schema(
         type=types.Type.OBJECT,
         properties={
